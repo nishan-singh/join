@@ -1,0 +1,274 @@
+@media (max-width: 1200px) {
+  .contacts-wrapper {
+    width: 45%;
+  }
+  .contacts-div-box {
+    width: 55%;
+    padding-inline: 32px;
+  }
+  .contacts-div-box-name {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .deco-wrapper {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+  .deco-line {
+    width: 60px;
+    height: 2px;
+    margin-top: 18px;
+  }
+  .contact-data {
+    width: 100%;
+  }
+  .contact-first-last-name-div {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    margin-right: 24px;
+  }
+  .contacts-name {
+    font-size: 54px;
+  }
+  .better-with {
+    font-size: 24px;
+  }
+  .contact-data-name {
+    font-size: 40px;
+  }
+  .overlay-contact-button {
+    justify-content: flex-start;
+  }
+  .overlay-button-cancel-div {
+    display: none;
+  }
+  .add-contact-overlay {
+    font-size: 54px;
+  }
+  .new-contact-overlay-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contacts-wrapper {
+    width: 40%;
+  }
+  .contacts-div-box {
+    width: 60%;
+    padding-inline: 32px 24px;
+  }
+  .contactlist-name {
+    width: 75%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .contact-first-last-name-div {
+    width: 75px;
+    height: 75px;
+    font-size: 36px;
+    margin-right: 18px;
+  }
+  .contact-data-name {
+    font-size: 36px;
+  }
+  .contactlist-email {
+    width: 75%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .new-contact-overlay {
+    width: 40%;
+    padding: 40px 40px 40px 32px;
+  }
+  .new-contact-overlay-img {
+    width: 100%;
+    padding-left: 32px;
+  }
+  .new-contact {
+    right: 24px;
+  }
+}
+@media (max-width: 872px) {
+  .contacts-wrapper {
+    width: 40%;
+    padding-inline: 5%;
+    height: calc(100vh - 152px);
+  }
+  .contactlist-name {
+    width: auto;
+  }
+  .contactlist-email {
+    width: auto;
+  }
+  .contacts-div-box {
+    width: 60%;
+    padding: 32px;
+    height: calc(100vh - 200px);
+  }
+  .contacts-name {
+    font-size: 54px;
+  }
+  .better-with {
+    font-size: 24px;
+  }
+  .background-div {
+    width: 100%;
+    left: 0;
+  }
+  .new-contact {
+    bottom: 96px;
+  }
+  .overlay-new-contact,
+  .edit-contact {
+    flex-direction: column;
+    width: 60%;
+    height: 90%;
+  }
+  .new-contact-overlay-left,
+  .edit-box-left {
+    width: 100%;
+    flex-basis: 50%;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0;
+  }
+  .add-contact-overlay::before, .edit-contact-name::before {
+    display: none;
+  }
+  .user-icon,
+  .edit-name-token {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+  }
+  .user-icon {
+    top: 42%;
+  }
+  .edit-name-token {
+    top: 36%;
+  }
+  .new-contact-overlay-img {
+    padding: 0;
+    width: 90%;
+  }
+  .new-contact-overlay,
+  .edit-input-field {
+    width: 100%;
+    flex-basis: 50%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 30px;
+  }
+  .close-x {
+    right: 32px;
+    top: 32px;
+  }
+  .new-contact-overlay-input {
+    gap: 16px;
+  }
+  .overlay-input {
+    padding: 8px 21px;
+  }
+  .overlay-contact-button {
+    justify-content: center;
+  }
+  .overlay-button-create-contact-div {
+    padding: 12px 8px;
+  }
+  .close-x path {
+    stroke: white;
+  }
+}
+
+@media (max-width: 700px) {
+  .contacts-wrapper {
+    width: 100%;
+    padding-inline: 12.5%;
+  }
+  .contacts-div-line {
+    width: 100%;
+    height: 1.5px;
+    margin-block: 24px;
+  }
+  .contacts-div-box {
+    width: 100%;
+  }
+  .back-btn {
+    display: block;
+    background-color: transparent;
+    border: transparent;
+    position: absolute;
+    right: 32px;
+    top: 48px;
+    cursor: pointer;
+  }
+  .contacts {
+    margin-bottom: 24px;
+  }
+  .contactlist-name {
+    font-size: 22px;
+  }
+  .contacts-div-box {
+    display: none;
+  }
+  .overlay-new-contact {
+    width: 75%;
+  }
+  .add-contact-overlay {
+    font-size: 48px;
+  }
+  .new-contact-overlay-text {
+    font-size: 20px;
+  }
+  .new-contact {
+    bottom: unset;
+    top: 96;
+    z-index: 4;
+  }
+  .edit-contact-button {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+  }
+  .edit-name {
+    display: none;
+  }
+}
+@media (max-width: 572px) {
+  .new-contact-overlay-left,
+  .new-contact-overlay,
+  .edit-box-left,
+  .edit-input-field {
+    width: 100%;
+  }
+  .new-contact-overlay {
+    width: 100%;
+  }
+  .add-contact-overlay,
+  .edit-contact-name {
+    font-size: 42px;
+    white-space: nowrap;
+  }
+  .new-contact-overlay-text {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .overlay-new-contact, .edit-contact {
+    width: 90%;
+  }
+}
+
+@media (max-height: 680px) {
+  .user-icon {
+    top: 40%;
+  }
+  .new-contact-overlay-img {
+    width: 75%;
+  }
+}

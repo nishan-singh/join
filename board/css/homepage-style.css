@@ -1,0 +1,272 @@
+@import "./nav-sidebar.css";
+@import "../fonts-inter/fonts-inter.css";
+
+:root {
+  --primary-color: #2a3647;
+  --secondary-color: #ffffff;
+  --muted-color: #cdcdcd;
+  --text-primary-color: #000000;
+  --text-secondary-color: #ffffff;
+  --sidebar-width: 232px;
+  --main-margin-bottom: 35px;
+  --todo-section-width: 580px;
+  --main-border-radius: 30px;
+  --main-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: #f6f7f8;
+}
+
+.d-none {
+  display: none;
+}
+
+.main-section {
+  position: absolute;
+  top: 171px;
+  left: 232px;
+  width: calc(100% - var(--sidebar-width));
+}
+
+.summary-wrapper {
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.main-section h1 {
+  font-weight: 700;
+  font-size: 61px;
+  line-height: 120%;
+}
+
+.main-section p {
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 120%;
+}
+
+.deco-line {
+  height: 48px;
+  border: 1px solid #29abe2;
+  margin-right: 24px;
+}
+
+.deco-line2 {
+  height: 48px;
+  border: 1px solid;
+}
+
+.todo-summary-greeting-wrapper, .todo-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.todo-summary-greeting-wrapper {
+  width: 90%;
+}
+
+.todo-section {
+  width: var(--todo-section-width);
+  margin-right: 35px;
+}
+
+.todo-section a {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  border-radius: var(--main-border-radius);
+  text-decoration: none;
+  color: var(--text-primary-color);
+}
+
+.todo-section li {
+  border-radius: var(--main-border-radius);
+  box-shadow: var(--main-shadow);
+  background-color: var(--secondary-color);
+  list-style: none;
+}
+
+.todo-section ul {
+  display: flex;
+  align-items: flex-start;
+}
+
+.todo-section p {
+  text-align: center;
+}
+
+.todo-infos-wrapper {
+  gap: 35px;
+  margin-bottom: var(--main-margin-bottom);
+}
+
+.todo-infos-wrapper li {
+  height: 170px;
+  width: 170px;
+}
+
+.todo-infos-wrapper li:hover {
+  background-color: var(--primary-color);
+  color: var(--text-secondary-color);
+}
+
+.todo-infos-wrapper a {
+  flex-direction: column;
+  padding: 25px 0px 25px 0px;
+}
+
+.todo-infos-wrapper a:hover {
+  color: var(--text-secondary-color);
+}
+
+.todo-infos-wrapper h2 {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 76.8px;
+}
+
+.todo-infos-wrapper p {
+  font-size: 21px;
+  line-height: 25.2px;
+  font-weight: 400;
+}
+
+.urgent-todo-wrapper {
+  width: var(--todo-section-width);
+  height: 150px;
+  margin-bottom: var(--main-margin-bottom);
+}
+
+.urgent-todo-wrapper img {
+  width: 60px;
+  height: 60px;
+}
+
+.urgent-todo-wrapper li {
+  width: 100%;
+  height: 100%;
+}
+
+.left-side,
+.right-side {
+  flex-direction: column;
+}
+
+.right-side {
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.urgent-todo-wrapper h2 {
+  font-weight: 600;
+  font-size: 47px;
+  line-height: 120%;
+}
+
+.urgent-todo-wrapper h3 {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 120%;
+}
+
+.urgent-todo-wrapper p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.urgent-todo-wrapper div {
+  height: 75%;
+  margin-inline: 24px;
+  border-color: #d1d1d1;
+}
+.urgent-todo-wrapper li:hover {
+  background-color: var(--primary-color);
+  color: var(--text-secondary-color);
+}
+
+.urgent-todo-wrapper a:hover {
+  color: var(--text-secondary-color);
+}
+
+.todo-status-wrapper {
+  width: var(--todo-section-width);
+  gap: 35px;
+  margin-bottom: 120px;
+}
+
+.todo-status-wrapper li {
+  width: 272.5px;
+  height: 150px;
+  gap: 18px;
+}
+
+.todo-status-wrapper a {
+  padding: 38px 19px;
+  border-radius: var(--main-border-radius);
+  gap: 10px;
+}
+
+.todo-status-wrapper a:hover{
+  background: var(--primary-color);
+  color: var(--text-secondary-color);
+}
+
+.todo-section a:hover .circle{
+  fill: var(--secondary-color);
+}
+.todo-section a:hover .hover-bg{
+  fill: var(--primary-color);
+}
+
+.todo-section a:hover .stroke-color {
+  stroke: var(--primary-color);
+}
+
+.todo-status-wrapper figcaption {
+  text-align: center;
+}
+
+.todo-status-wrapper h2 {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 120%;
+}
+
+.todo-status-wrapper p {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 120%;
+}
+
+.todo-status-wrapper img {
+  width: 69px;
+  height: 69px;
+}
+
+.greeting-wrapper {
+  margin-bottom: 120px;
+}
+
+.greeting-wrapper h2 {
+  font-size: 47px;
+  line-height: 56px;
+  font-weight: 500;
+}
+
+.user-name {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 120%;
+  color: #29abe2;
+}

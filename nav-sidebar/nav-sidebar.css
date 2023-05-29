@@ -1,0 +1,272 @@
+:root {
+  --primary-color: #2a3647;
+  --secondary-color: #ffffff;
+  --muted-color: #cdcdcd;
+  --text-primary-color: #000000;
+  --text-secondary-color: #ffffff;
+  --sidebar-width: 232px;
+  --main-margin-bottom: 35px;
+  --todo-section-width: 580px;
+  --main-border-radius: 30px;
+  --main-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  font-weight: normal;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar,
+.sidebar {
+  position: fixed;
+  top: 0;
+  margin: 0;
+}
+
+.navbar {
+  height: 72px;
+  width: calc(100% - var(--sidebar-width));
+  background-color: var(--secondary-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  right: 0;
+  justify-content: space-between;
+  z-index: 5;
+  padding-inline: 5%;
+}
+
+.info {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 120%;
+}
+
+.nav-logo {
+  display: none;
+}
+
+.user-wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.user-wrapper button {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.help-btn {
+  margin-right: 24px;
+}
+
+.log-out {
+  position: absolute;
+  top: 72px;
+  right: 0;
+}
+
+.log-out-menu {
+  position: absolute;
+  top: 72px;
+  margin: 0;
+  padding: 0;
+  transition: right 125ms ease-in-out;
+}
+
+.log-out-menu li,
+.log-out a {
+  width: 130px;
+  height: 53px;
+  background: var(--primary-color);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  list-style: none;
+}
+
+.log-out-menu li:first-child {
+  border-radius: 20px 0px 0px 0px;
+}
+
+.log-out-menu li:last-child {
+  border-radius: 0px 0px 20px 20px;
+}
+
+.log-out-menu a,
+.log-out a {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: var(--muted-color);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.log-out a {
+  width: 130px;
+  height: 53px;
+  border-radius: 20px 0px 20px 20px;
+}
+
+.question {
+  margin-right: 24px;
+}
+
+.user {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+}
+
+.sidebar {
+  bottom: 0;
+  background-color: var(--primary-color);
+  width: var(--sidebar-width);
+  height: 100vh;
+  color: var(--secondary-color);
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 10;
+}
+
+.sidebar .logo {
+  padding: 0;
+}
+
+.sidebar-links-list {
+  width: var(--sidebar-width);
+  list-style: none;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.each-sidebar-link {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.sidebar-icon {
+  margin-right: 24px;
+}
+
+.legal-notice {
+  width: 100%;
+}
+
+.sidebar-links {
+  text-decoration: none;
+  color: var(--muted-color);
+  font-size: 16px;
+  width: 100%;
+  padding: 8px 0;
+  padding-left: 3rem;
+  justify-content: initial;
+}
+
+.active {
+  background-color: #091931;
+  color: var(--text-secondary-color);
+}
+
+@media (min-width: 872px) {
+  .log-out-menu {
+    visibility: hidden;
+    right: 0;
+  }
+  .show-log-out {
+    visibility: visible;
+  }
+  .log-out-menu li {
+    display: none;
+  }
+  .log-out-menu li:last-child {
+    display: block;
+    border-radius: 20px 0 20px 20px;
+  }
+}
+
+@media (max-width: 872px) {
+  .help-btn {
+    display: none;
+  }
+  .log-out-menu {
+    right: -300px;
+  }
+  .log-out-for-mobile {
+    right: 0px;
+  }
+  .navbar {
+    width: 100%;
+    padding-inline: 10%;
+  }
+  .sidebar {
+    width: 100%;
+    left: 0;
+    top: initial;
+    right: 0;
+    height: 80px;
+  }
+  .log-out {
+    display: none;
+  }
+  .nav-logo {
+    display: block;
+    width: 32px;
+  }
+  .sidebar div {
+    display: none;
+  }
+  .question {
+    display: none;
+  }
+  .info {
+    display: none;
+  }
+  .sidebar-links-list {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .legal-notice {
+    display: none;
+  }
+  .sidebar li {
+    width: 75px;
+    height: 80px;
+  }
+  .sidebar a {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+  }
+  .sidebar-icon {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding-inline: 5%;
+  }
+}

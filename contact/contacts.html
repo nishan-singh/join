@@ -1,0 +1,147 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+    <link rel="icon" href="../img/icons/blue-logo.png" />
+    <link rel="stylesheet" href="../contact/fonts.css" />
+    <link rel="stylesheet" href="../contact/contacts.css" />
+    <link rel="stylesheet" href="../contact/contact-media-queries.css" />
+    <link rel="stylesheet" href="../nav-sidebar/nav-sidebar.css" />
+    <link rel="stylesheet" href="../fonts-inter/fonts-inter.css" />
+    <script src="../smallest_backend_ever/mini_backend.js"></script>
+    <script src="../nav-sidebar/nav-sidebar.js"></script>
+    <script src="../contact/js/overlay.js" defer></script>
+    <script src="../contact/js/contacts.js" defer></script>
+  </head>
+
+  <body onload="initContacts()">
+    <div w3-include-html="../nav-sidebar/nav-sidebar.html"></div>
+    <main class="background-div">
+      <section class="contacts-wrapper" id="contacts-wrapper">
+        <div class="contacts-box" id="contacts"></div>
+      </section>
+      <!-- <div class="overlay-contact" id="overlay-contact"></div> -->
+      <section class="contacts-div-box" id="contacts-div-box">
+        <button class="back-btn" onclick="closeContact();">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.828 11.0002H19C19.5523 11.0002 20 11.4479 20 12.0002C20 12.5525 19.5523 13.0002 19 13.0002H7.828L12.485 17.6572C12.8755 18.0476 12.8755 18.6807 12.485 19.0712C12.0945 19.4616 11.4615 19.4616 11.071 19.0712L4.70711 12.7073C4.31658 12.3167 4.31658 11.6836 4.70711 11.2931L11.071 4.92917C11.4615 4.5387 12.0945 4.5387 12.485 4.92917C12.8755 5.31963 12.8755 5.9527 12.485 6.34317L7.828 11.0002Z"
+              fill="black"
+            />
+          </svg>
+        </button>
+        <div class="contacts-div-box-name">
+          <h3 class="contacts-name">Contacts</h3>
+          <div class="deco-wrapper">
+            <div class="deco-line"></div>
+            <h4 class="better-with">Better with a team</h4>
+          </div>
+        </div>
+        <!-- <img class="contacts-name-img" src="../img/Vector 5.png" /> -->
+        <div class="contact-data" id="contact-data"></div>
+        <!-- <img class="contact-name-img" src="../img/Vector5.png" /> -->
+      </section>
+    </main>
+    <!-- </div> -->
+    <dialog id="new-contact" class="modal">
+      <button onclick="closeOverlay()" class="close-x">
+        <svg
+          width="31"
+          height="31"
+          viewBox="0 0 31 31"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22.9616 7.65393L7.65388 22.9617"
+            stroke="#2A3647"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M22.8172 23.1061L7.50941 7.79838"
+            stroke="#2A3647"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <div class="new-contact-overlay-left">
+        <h2 class="add-contact-overlay">Add Contact</h2>
+        <h4 class="new-contact-overlay-text">Tasks are better with a team!</h4>
+      </div>
+      <div class="user-icon">
+        <img class="new-contact-overlay-img" src="../img/Frame 79.png" />
+      </div>
+      <form
+        onsubmit="createContact(); return false"
+        class="save-contact-form new-contact-overlay"
+        method="dialog"
+      >
+        <div class="new-contact-overlay-input">
+          <input
+            required
+            type="text"
+            class="overlay-input"
+            placeholder="First-name"
+            id="first-name"
+          />
+          <input
+            required
+            type="text"
+            class="overlay-input"
+            placeholder="Last-name"
+            id="last-name"
+          />
+          <input
+            required
+            type="email"
+            class="overlay-input"
+            placeholder="Email"
+            id="email"
+          />
+          <input
+            required
+            type="number"
+            inputmode="numeric"
+            class="overlay-input"
+            placeholder="Phone"
+            id="phone"
+          />
+          <div class="overlay-contact-button">
+            <button class="overlay-button-cancel-div" onclick="closeOverlay()">
+              <h3 class="overlay-button-cancel">Cancel</h3>
+              <img src="../img/Vector.png" />
+            </button>
+
+            <button
+              class="overlay-button-create-contact-div"
+              id="overlay-button-create-contact-div"
+            >
+              <h3 class="overlay-button-create-contact">Create Contact</h3>
+              <img src="../img/vector-ok.png" />
+            </button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+    <dialog class="" id="edit-contact"></dialog>
+    <button
+      class="new-contact"
+      id="new-contact-button"
+      onclick="openNewContact()"
+    >
+      <h3 class="new-contact-name">New contact</h3>
+      <img class="capa" src="../img/Capa 1.png" />
+    </button>
+  </body>
+</html>

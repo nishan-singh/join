@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Board</title>
+    <link rel="icon" href="../img/icons/blue-logo.png" />
+    <link rel="stylesheet" href="../nav-sidebar/nav-sidebar.css" />
+    <link rel="stylesheet" href="./css/board.css" />
+    <link rel="stylesheet" href="./css/media-queries.css">
+    <link rel="stylesheet" href="../fonts-inter/fonts-inter.css" />
+    <script src="../smallest_backend_ever/mini_backend.js"></script>
+    <script src="../nav-sidebar/nav-sidebar.js"></script>
+    <script src="js/board.js" defer></script>
+    <script src="js/board-templates.js" defer></script>
+    <script src="js/add-task.js" defer></script>
+    <script src="js/open-task.js" defer></script>
+    <script src="js/edit-task.js" defer></script>
+  </head>
+
+  <body onload="init()">
+    <div w3-include-html="../nav-sidebar/nav-sidebar.html"></div>
+
+    <main class="whole-site" id="whole-site">
+      <header class="headline-area">
+        <h1 class="headline-board">Board</h1>
+        <div class="input-button">
+          <input
+            id="search-tasks"
+            onkeyup="filterAllWorkspaces()"
+            class="input-board"
+            placeholder="Find Task"
+          />
+          <button onclick="addTask('To do')" class="search-button">
+            Add Task <b class="plus">+</b>
+          </button>
+        </div>
+      </header>
+
+      <section class="processing-area">
+        <div class="task-workspace margin-right">
+          <header class="processing-area-headlines-div">
+            <h3 class="processing-area-headlines">To do</h3>
+            <button onclick="addTask('To do')" class="plus-icon">+</button>
+          </header>
+          <ul
+            id="to-do-area"
+            class="task-area"
+            ondrop="moveTo('To do'); removeHighlight('to-do-area')"
+            ondragover="highlight('to-do-area'); allowDrop(event);"
+            ondragleave="removeHighlight('to-do-area')"
+          >
+            <!--filled with Java Script-->
+          </ul>
+        </div>
+        <div class="task-workspace margin-right">
+          <header class="processing-area-headlines-div">
+            <h3 class="processing-area-headlines">In progress</h3>
+            <button onclick="addTask('In Progress')" class="plus-icon">
+              +
+            </button>
+          </header>
+          <ul
+            id="in-progress-area"
+            class="task-area"
+            ondrop="moveTo('In Progress'); removeHighlight('in-progress-area')"
+            ondragover="highlight('in-progress-area'); allowDrop(event)"
+            ondragleave="removeHighlight('in-progress-area')"
+          >
+            <!--filled with Java Script-->
+          </ul>
+        </div>
+        <div class="task-workspace margin-right">
+          <header class="processing-area-headlines-div">
+            <h3 class="processing-area-headlines">Awaiting feedback</h3>
+            <button onclick="addTask('Awaiting Feedback')" class="plus-icon">
+              +
+            </button>
+          </header>
+          <ul
+            id="awaiting-feedback-area"
+            class="task-area"
+            ondrop="moveTo('Awaiting Feedback'); removeHighlight('awaiting-feedback-area')"
+            ondragover="highlight('awaiting-feedback-area'); allowDrop(event);"
+            ondragleave="removeHighlight('awaiting-feedback-area')"
+          >
+            <!--filled with Java Script-->
+          </ul>
+        </div>
+        <div class="task-workspace">
+          <header class="processing-area-headlines-div">
+            <h3 class="processing-area-headlines">Done</h3>
+            <button onclick="addTask('Done')" class="plus-icon">+</button>
+          </header>
+          <ul
+            id="done-area"
+            class="task-area"
+            ondrop="moveTo('Done'); removeHighlight('done-area')"
+            ondragover="highlight('done-area');allowDrop(event);"
+            ondragleave="removeHighlight('done-area')"
+          >
+            <!--filled with Java Script-->
+          </ul>
+        </div>
+      </section>
+    </main>
+    <div
+      class="container-opened-task"
+      id="container-opened-task"
+    >
+      <!--filled with Java Script-->
+    </div>
+  </body>
+</html>
