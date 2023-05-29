@@ -1,0 +1,250 @@
+@media (min-width: 1024px) {
+  .main-section {
+    width: calc(100% - var(--sidebar-width));
+    left: var(--sidebar-width);
+    flex-direction: column;
+  }
+  /* .greeting-wrapper {
+    display: block;
+  } */
+  .todo-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 0;
+  }
+  .todo-infos-wrapper li {
+    width: 155px;
+    height: 155px;
+  }
+  .todo-section h2 {
+    font-size: 60px;
+  }
+  .todo-infos-wrapper p {
+    font-size: 18px;
+  }
+  .urgent-todo-wrapper li {
+    width: calc(100% - 45px);
+  }
+  .todo-status-wrapper {
+    width: calc(100% - 45px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .summary-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .deco-wrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .deco-line {
+    width: 90px;
+    height: 0;
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 872px) {
+  .log-out-menu {
+    visibility: hidden;
+    right: 0;
+  }
+  .show-log-out {
+    visibility: visible;
+  }
+  .log-out-menu li {
+    display: none;
+  }
+  .log-out-menu li:last-child {
+    display: block;
+    border-radius: 20px 0 20px 20px;
+  }
+}
+
+@media (max-width: 872px) {
+  .help-btn {
+    display: none;
+  }
+  .log-out-menu {
+    right: -300px;
+  }
+  .log-out-for-mobile {
+    right: 0px;
+  }
+  .navbar {
+    width: 100%;
+    padding-inline: 10%;
+  }
+  .sidebar {
+    width: 100%;
+    left: 0;
+    top: initial;
+    right: 0;
+    height: 80px;
+  }
+  .log-out {
+    display: none;
+  }
+  .nav-logo {
+    display: block;
+    width: 32px;
+  }
+  .sidebar div {
+    display: none;
+  }
+  .question {
+    display: none;
+  }
+  .info {
+    display: none;
+  }
+  .sidebar-links-list {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .legal-notice {
+    display: none;
+  }
+  .sidebar li {
+    width: 75px;
+    height: 80px;
+  }
+  .sidebar a {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+  }
+  .sidebar-icon {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+  .main-section {
+    width: 100%;
+    left: 0;
+    top: 120px;
+  }
+  .todo-summary-greeting-wrapper {
+    width: 80%;
+  }
+  .summary-desc-wrapper p {
+    display: block;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .deco-wrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .deco-line {
+    width: 90px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding-inline: 5%;
+  }
+  .todo-summary-greeting-wrapper {
+    width: 90%;
+  }
+  .summary-wrapper h1 {
+    font-weight: 700;
+    font-size: 47px;
+    line-height: 120%;
+  }
+  .summary-wrapper p {
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+  }
+  .summary-desc-wrapper p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+  }
+  .todo-greeting-wrapper {
+    width: 100%;
+  }
+  .todo-section {
+    width: 100%;
+  }
+  .todo-section ul {
+    width: 100%;
+    height: 110px;
+    justify-content: space-between;
+  }
+  .todo-section li {
+    height: 110px;
+    border-radius: 20px;
+  }
+  .todo-status-wrapper a {
+    border-radius: 20px;
+  }
+  .todo-section img {
+    width: 40px;
+    height: 40px;
+  }
+  .todo-section h2 {
+    font-weight: 600;
+    font-size: 47px;
+    line-height: 120%;
+  }
+
+  .todo-section svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  .todo-section p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+  }
+  .todo-section .urgent-todo-wrapper li {
+    width: 100%;
+  }
+  .todo-infos-wrapper {
+    gap: 18px;
+  }
+  .todo-infos-wrapper li {
+    width: 30%;
+  }
+  .urgent-todo-wrapper h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+  }
+  .urgent-todo-wrapper p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+  }
+  .todo-status-wrapper {
+    gap: 18px;
+  }
+  .todo-status-wrapper li {
+    width: calc(50% - 7.5px);
+  }
+}
+
+@media (max-width: 450px) {
+  .todo-section {
+    margin-right: 0px;
+  }
+}
