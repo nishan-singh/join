@@ -35,6 +35,8 @@ li {
 }
 
 .navbar {
+  position: sticky;
+  left: var(--sidebar-width);
   height: 72px;
   width: calc(100% - var(--sidebar-width));
   background-color: var(--secondary-color);
@@ -43,6 +45,7 @@ li {
   justify-content: space-between;
   z-index: 5;
   padding-inline: 5%;
+  overflow: hidden;
 }
 
 .info {

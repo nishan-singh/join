@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../img/icons/blue-logo.png" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../../fonts-inter/fonts-inter.css" />
+    <link rel="stylesheet" href="./sign-in.css" />
+    <link rel="stylesheet" href="../common-css.css" />
+    <script src="../../smallest_backend_ever/mini_backend.js"></script>
+    <script src="./sign-in.js"></script>
+  </head>
+  <body onload="getUsers()">
+    <img id="start-pic" class="logo-small" src="../../img/start.png" />
+    <main class="main-container">
+      <div id="login-container">
+        <a href="../login.html"
+          ><img id="arrow-back" class="logo" src="../../img/arrow.png"
+        /></a>
+        <h1>Sign In</h1>
+        <form onsubmit="sign();return false">
+          <input
+            type="name"
+            required
+            id="username"
+            class="name-input"
+            placeholder="Firstname Lastname"
+            pattern="[A-ZÄÜÖ][a-zäüö]* +[A-ZÄÜÖ][a-zäüö]*"
+            oninvalid="this.setCustomValidity('Please enter first name and last name with first letter capital!')"
+            oninput="setCustomValidity('')"
+          />
+          <div>
+            <input
+              type="email"
+              required
+              id="email"
+              class="mail-input"
+              placeholder="E-mail"
+            />
+            <p id="user-exists" class="d-none">
+              Email already exists! Please <a href="../login.html">Log In</a>
+            </p>
+          </div>
+          <input
+            type="password"
+            required
+            id="password"
+            class="password-input"
+            placeholder="Password"
+          />
+          <button id="sign-btn" class="login-btn">Sign In</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

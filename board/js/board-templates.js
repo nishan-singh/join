@@ -80,7 +80,6 @@ function createOpenedTask(idToOpen, date, id) {
                     <p class="first-p">Subtasks:</p>
                     <div class="subtasks-to-edit" id="subtasks-to-edit"></div>
                 </div>
-                </div>
                 <div class="edit-cancel">
                     <button onclick="deleteTask(${idToOpen})" class="background-div">
                         <img class="delete-icon" src="../img/delete.png">
@@ -88,6 +87,7 @@ function createOpenedTask(idToOpen, date, id) {
                     <button onclick="editTask(${idToOpen}, ${id})" class="background-div">
                         <img src="../img/pencil.png">
                     </button>  
+                </div>
                 </div>
         </div>
     `;

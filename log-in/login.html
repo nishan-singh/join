@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../img/icons/blue-logo.png" />
     <title>Log In</title>
+    <link rel="stylesheet" href="./common-css.css" />
     <link rel="stylesheet" href="./login.css" />
     <link rel="stylesheet" href="../fonts-inter/fonts-inter.css" />
     <script src="../smallest_backend_ever/mini_backend.js"></script>
@@ -13,38 +14,44 @@
   <body onload="getLogin()">
     <div id="start-background" class="start"></div>
     <img id="start-pic" class="logo-big" src="../img/start.png" />
-    <div id="newuser-container" class="d-none">
+    <div id="new-user-container" class="d-none">
       <p id="new-question">Not at Join?</p>
-      <a href="./registrieren.html" id="sign-in">Sign in</a>
+      <a href="./sign-in/sign-in.html" id="sign-in">Sign in</a>
     </div>
-    <div class="all-container">
+    <main class="main-container">
       <div id="login-container" class="d-none">
         <h1>Log In</h1>
-        <div id="blue-line"></div>
         <form onsubmit="getCurrentUserFromBackend();return false">
-          <input
-            onclick="event.stopPropagation()"
-            id="mail-login"
-            class="mail-input"
-            required
-            type="email"
-            placeholder="E-mail"
-          />
-          <div id="password-cont">
+          <div>
+            <input
+              onclick="event.stopPropagation()"
+              id="mail-login"
+              class="mail-input"
+              required
+              type="email"
+              placeholder="E-mail"
+            />
+            <p id="not-registered" class="not-registered visibility-hidden">
+              Not at Join?
+              <a href="./sign-in/sign-in.html"> Join Now! </a>
+            </p>
+          </div>
+          <div>
             <input
               onclick="event.stopPropagation()"
               id="password-login"
               class="password-input"
               required
               type="password"
-              placeholder="Passwort"
+              placeholder="Password"
             />
-            <img id="eyelock" src="../img/Schloß.png" />
+            <p id="forgot-password" class="forgot-password visibility-hidden">
+              Password forgotten? Click on <em>Forgot Password </em>
+            </p>
           </div>
+
           <div class="help-container">
-            <!--Passwort zeigen>
-            </p>-->
-            <div class="container-rember">
+            <div class="container-remember">
               <input
                 id="rememberme"
                 type="checkbox"
@@ -55,32 +62,19 @@
             </div>
             <a
               id="new-password"
-              href="./forgot_password.html"
+              href="./forgot-password/forgot-password.html"
               onclick="event.stopPropagation()"
               >Forgot password</a
             >
           </div>
           <div id="btn-box">
             <button id="login-btn" class="login-btn">LogIn</button>
-            <div id="guest-btn" onclick="event.stopPropagation();guestLogin()">
-              Guest LogIn
-            </div>
+            <button id="guest-btn" type="button" onclick="guestLogin()">
+              Guest Log in
+            </button>
           </div>
         </form>
       </div>
-    </div>
-    <!--------------------------popup------------->
-    <div id="popup-trys" class="d-none popup-user">
-      <p class="popup-user-p">
-        Nutzer nicht bekannt!<br />Bitte registrieren...
-      </p>
-    </div>
-
-    <!--------------------------popup------------->
-    <div id="popup-try-again" class="d-none popup-user">
-      <p class="popup-user-p">
-        Passwort/Email nicht bekannt!<br />Nochmal versuchen
-      </p>
-    </div>
+    </main>
   </body>
 </html>

@@ -1,8 +1,9 @@
 let loadedCurrent_user = [];
 
-setURL("https://nishan-singh.developerakademie.net/join/smallest_backend_ever");
+setURL("https://join.nishan-singh.com/smallest_backend_ever");
 
-function newPassword() {
+async function newPassword() {
+  await downloadFromServer();
   let password_content = document.getElementById("login-container");
   password_content.innerHTML = "";
   password_content.innerHTML = generateResetPassword();
@@ -22,16 +23,16 @@ async function set_new_password() {
       if (user[i]["username"] == foundUser["username"]) {
         user[i]["password"] = password1;
       }
-      saveUser(user, foundUser);
+      await saveUser(user);
     }
-    window.location.href = "./login.html";
+    window.location.href = "../login.html";
   } else {
     showWarnPW();
     setTimeout(clearWarn, 1000);
   }
 }
 
-async function saveUser(user, foundUser) {
+async function saveUser(user) {
   await backend.setItem("users", JSON.stringify(user));
   await backend.deleteItem("user_found");
 }

@@ -20,7 +20,7 @@ async function init() {
   sidebarLinkActive();
 }
 
-setURL("https://nishan-singh.developerakademie.net/join/smallest_backend_ever");
+setURL("https://join.nishan-singh.com/smallest_backend_ever");
 
 async function getDataFromBackend() {
   await downloadFromServer();
@@ -133,12 +133,8 @@ function showGreeting() {
     document
       .querySelector(".main-section")
       .classList.add("main-section-for-greeting");
-    document
-      .querySelector(".todo-section")
-      .classList.add("d-none");
-    document
-      .querySelector(".summary-wrapper")
-      .classList.add("d-none");
+    document.querySelector(".todo-section").classList.add("d-none");
+    document.querySelector(".summary-wrapper").classList.add("d-none");
     document
       .querySelector(".greeting-wrapper")
       .classList.add("greeting-wrapper-for-greeting");
@@ -152,12 +148,8 @@ function hideGreeting() {
   document
     .querySelector(".main-section")
     .classList.remove("main-section-for-greeting");
-  document
-    .querySelector(".todo-section")
-    .classList.remove("d-none");
-  document
-    .querySelector(".summary-wrapper")
-    .classList.remove("d-none");
+  document.querySelector(".todo-section").classList.remove("d-none");
+  document.querySelector(".summary-wrapper").classList.remove("d-none");
   // document.querySelector(".greeting-wrapper").classList.add("hide-greeting");
   document.getElementById("nav-sidebar-wrapper").classList.remove("d-none");
 }

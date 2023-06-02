@@ -135,7 +135,8 @@
     border-top-right-radius: 30px;
     border-bottom-left-radius: 0;
   }
-  .add-contact-overlay::before, .edit-contact-name::before {
+  .add-contact-overlay::before,
+  .edit-contact-name::before {
     display: none;
   }
   .user-icon,
@@ -189,7 +190,7 @@
 @media (max-width: 700px) {
   .contacts-wrapper {
     width: 100%;
-    padding-inline: 12.5%;
+    padding-inline: 7%;
   }
   .contacts-div-line {
     width: 100%;
@@ -259,7 +260,8 @@
     font-size: 18px;
     white-space: nowrap;
   }
-  .overlay-new-contact, .edit-contact {
+  .overlay-new-contact,
+  .edit-contact {
     width: 90%;
   }
 }

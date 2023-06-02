@@ -31,7 +31,7 @@ let alphabetics = [
 ];
 let modal = document.querySelector("#new-contact");
 
-setURL("https://nishan-singh.developerakademie.net/join/smallest_backend_ever");
+setURL("https://join.nishan-singh.com/smallest_backend_ever");
 
 async function initContacts() {
   await downloadFromServer();

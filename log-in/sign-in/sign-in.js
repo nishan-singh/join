@@ -1,4 +1,4 @@
-setURL("https://nishan-singh.developerakademie.net/join/smallest_backend_ever");
+setURL("https://join.nishan-singh.com/smallest_backend_ever");
 
 /**
  * function to get all registrated Users and Contacts from storage
@@ -22,23 +22,23 @@ async function sign() {
     password: password.value,
   };
 
-  if (checknewUser(users, email.value)) {
-    savenewUser(users, newUser);
-    window.location.href = "./login.html";
+  if (checkNewUser(users, email.value)) {
+    saveNewUser(users, newUser);
+    setTimeout(() => {
+      window.location.href = "../login.html";
+    }, 1000);
     cleanValue(username, email, password);
   } else {
-    openPopup();
+    showWarning();
   }
 }
 
-function openPopup() {
-  let popup = document.getElementById("popup-user");
-  popup.classList.remove("d-none");
-  setTimeout(locateToLogin, 2000);
+function showWarning() {
+  document.getElementById("user-exists").classList.remove("d-none");
 }
 
 function locateToLogin() {
-  window.location.href = "./login.html";
+  window.location.href = "../login.html";
 }
 
 function cleanValue(username, email, password) {
@@ -52,18 +52,22 @@ function cleanValue(username, email, password) {
  * @param {string} newUser -Parameter is name of user,who wants to registrate
  * @returns {boolean} -true if user is new
  */
-function checknewUser(users, email) {
+function checkNewUser(users, email) {
   let checkUser;
   if (users.length == 0) {
     checkUser = true;
   } else {
-    for (let i = 0; i < users.length; i++) {
-      if (users[i]["email"] == email) {
-        checkUser = false;
-        return checkUser;
-      } else {
-        checkUser = true;
-      }
+    let user = users.find((u) => u.email == email);
+    if (user) {
+      checkUser = false;
+    } else {
+      // for (let i = 0; i < users.length; i++) {
+      //   if (users[i]["email"] == email) {
+      //     checkUser = false;
+      //     return checkUser;
+      // } else {
+      checkUser = true;
+      // }
     }
   }
   return checkUser;
@@ -73,7 +77,7 @@ function checknewUser(users, email) {
  * functions to save users to backend from here
  */
 
-async function savenewUser(users, newUser) {
+async function saveNewUser(users, newUser) {
   users.push(newUser);
   await backend.setItem("users", JSON.stringify(users));
 }

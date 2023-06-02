@@ -15,7 +15,7 @@ let year = dateToday.getFullYear();
 let month = dateToday.getMonth() + 1;
 let day = dateToday.getDate();
 
-setURL("https://nishan-singh.developerakademie.net/join/smallest_backend_ever");
+setURL("https://join.nishan-singh.com/smallest_backend_ever");
 
 /**
  * Initialize the website, get data from backend and prepare the frontend
@@ -204,6 +204,9 @@ function highlight(id) {
   let currCategory = document.getElementById(id);
   categorys.forEach((category) => (category.style.minHeight = "250px"));
   currCategory.classList.add("highlight");
+  if (currCategory.firstElementChild) {
+    currCategory.firstElementChild.style.marginTop = "250px";
+  }
 }
 
 function removeHighlight(id) {

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Task</title>
-    <link rel="icon" href="../img/icons/blue-logo.png"/>
-    <link rel="stylesheet" href="./css/board.css">
-    <link rel="stylesheet" href="./css/media-queries.css">
+    <link rel="icon" href="../img/icons/blue-logo.png" />
+    <link rel="stylesheet" href="./css/board.css" />
+    <link rel="stylesheet" href="./css/media-queries.css" />
     <link rel="stylesheet" href="../fonts-inter/fonts-inter.css" />
     <link rel="stylesheet" href="../nav-sidebar/nav-sidebar.css" />
     <script src="../smallest_backend_ever/mini_backend.js"></script>
@@ -18,127 +17,204 @@
     <script src="js/add-task.js"></script>
     <script src="js/open-task.js"></script>
     <script src="js/edit-task.js"></script>
-</head>
+  </head>
 
-<body onload="initAddTaskPage()">
+  <body onload="initAddTaskPage()">
     <div w3-include-html="../nav-sidebar/nav-sidebar.html"></div>
     <div class="full-page">
-
-        <div class="whole-site" id="whole-site">
-
-            <div class="added-to-task" id="added-to-task-1" style="bottom: 17%;">
-                <p>Task added to board</p>
-                <img style="margin-left: 12px;" src="../img/board-icon.png">
-            </div>
-
-            <form onsubmit="addNewTask('Add Task'); return false;" style="width: 100%;">
-                <div class="board-site">
-                    <div class="add-task-container">
-                        <div class="add-task-headline-div1">
-                            <h1 style="margin-bottom: 0;" class="add-task-headline">Add Task</h1>
-                        </div>
-
-                        <div class="add-task-inner-div">
-                            <div class="left-container left-container-add" style="margin-bottom: 16px;">
-                                <div class="div-title">
-                                    <p class="add-task-p">Title</p>
-                                    <input required id="input-title" class="add-task-input title-site-add-task" type="text"
-                                    oninvalid="this.setCustomValidity('This field is required')"
-                                    oninput="setCustomValidity('')"
-                                    placeholder="Enter a title">
-                                </div>
-                                <div class="div-description">
-                                    <p class="add-task-p">Description</p>
-                                    <textarea required id="input-description" class="add-task-placeholder textarea-add"
-                                    oninvalid="this.setCustomValidity('This field is required')"
-                                    oninput="setCustomValidity('')"
-                                    placeholder="Enter a Description"></textarea>
-                                </div>
-                                <div class="div-add-category" id="div-add-category">
-                                    <p class="add-task-p">Category</p>
-                                    <div id="drop-down-box1" class="drop-down-box bg-white">
-                                        <div onclick="showCategorys()" class="input-div-new category-new-height">
-                                            <p id="select-category" style="margin: 0;">Select task category</p>
-                                            <img class="arrow-down" src="../img/arrow-down1.png">
-                                        </div>
-                                        <div class="div-all-categorys" id="all-categorys">
-
-                                        </div>
-                                    </div>
-                                    <div class="colors-new-category" id="colors-new-category"></div>
-                                        <p class="text-category-required" id="text-category-required">Please choose a category</p>
-                                        <p class="text-category-required" id="text-category-required-name" style="margin-top: 4px;">Please choose a category name and a color</p>
-
-                                    </div>
-                                <div>
-                                    <p class="add-task-p">Assigned to</p>
-                                    <div id="drop-down-box" class="drop-down-box bg-white">
-                                        <div onclick="showContacts()" class="input-div-new category-new-height">
-                                            <p style="margin: 0;">Select contacts to assign</p>
-                                            <img class="arrow-down" src="../img/arrow-down1.png">
-                                        </div>
-                                        <div class="div-all-contacts" id="all-contacts"></div>
-                                    </div>
-                                    <p class="subtask-required" id="contact-required">Please choose at least one contact</p>
-                                </div>
-                            </div>
-                            <div class="right-container right-container-add">
-                                <div class="div-date" id="div-date">
-                                    <p class="add-task-p">Due date</p>
-                                    <input id="input-date-add-task" class="add-task-input-date" type="date"
-                                    oninvalid="this.setCustomValidity('This field is required')"
-                                    oninput="setCustomValidity('')"
-                                    required min="${year}-${month}-${day}" max="2025-01-01" placeholder="dd/mm/yyyy">
-                                </div>
-                                <div class="container-prio">
-                                    <p class="add-task-p">Prio</p>
-                                    <div class="add-task-prio-container">
-                                        <div class="add-task-prio-div bg-white" id="prio-div1"
-                                            onclick="setBorder('prio-div1', 'Urgent')">
-                                            <p>Urgent</p>
-                                            <img id="prio-img1" src="../img/red-arrows-up.png">
-                                        </div>
-                                        <div class="add-task-prio-div bg-white" id="prio-div2"
-                                            onclick="setBorder('prio-div2', 'Medium')">
-                                            <p>Medium</p>
-                                            <img id="prio-img2" src="../img/orange-lines3.png">
-                                        </div>
-                                        <div class="add-task-prio-div bg-white" style="margin-right: 0!important;" id="prio-div3"
-                                            onclick="setBorder('prio-div3', 'Low')">
-                                            <p>Low</p>
-                                            <img id="prio-img3" src="../img/green-arrows-down.png">
-                                        </div>
-                                    </div>
-                                    <p class="text-prio-required" id="prio-required">Please choose the priority of the task</p>
-                                </div>
-                                <div class="div-width-sub" style="width: 90%;">
-                                    <p style="width: 100%;" class="add-task-p">Subtasks</p>
-                                    <div class="add-task-input div-subtask bg-white title-site-add-task subtask-div-resp" id="subtask-div">
-                                        <input class="input-subtask" type="text" placeholder="Add new subtask"
-                                            onclick="changeSubtaskInput()">
-                                        <img onclick="changeSubtaskInput()" src="../img/plus.png">
-                                    </div>
-                                    <p class="subtask-required" id="subtask-required">Der Subtask darf nicht leer sein
-                                    </p>
-                                    <div class="new-subtask-div new-height-div-sub" id="new-subtask-div"></div>
-                                </div>
-                                <div class="container-buttons buttons-responsiv">
-                                    <button onclick="cancelNewTask()" class="add-task-cancel-button new-height-button">
-                                        <p>Cancel</p>
-                                        <p style="margin-left: 8px;">X</p>
-                                    </button>
-                                    <button id="button-add-new-task" class="create-task-button new-height-button">
-                                        <p>Create Task</p>
-                                        <img src="../img/hook.png">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+      <div class="whole-site" id="whole-site">
+        <div class="added-to-task" id="added-to-task-1" style="bottom: 17%">
+          <p>Task added to board</p>
+          <img style="margin-left: 12px" src="../img/board-icon.png" />
         </div>
-    </div>
-</body>
 
+        <form
+          onsubmit="addNewTask('Add Task'); return false;"
+          style="width: 100%"
+        >
+          <div class="board-site">
+            <div class="add-task-container">
+              <div class="add-task-headline-div1">
+                <h1 style="margin-bottom: 0" class="add-task-headline">
+                  Add Task
+                </h1>
+              </div>
+
+              <div class="add-task-inner-div">
+                <div
+                  class="left-container left-container-add"
+                  style="margin-bottom: 16px"
+                >
+                  <div class="div-title">
+                    <p class="add-task-p">Title</p>
+                    <input
+                      required
+                      id="input-title"
+                      class="add-task-input title-site-add-task"
+                      type="text"
+                      oninvalid="this.setCustomValidity('This field is required')"
+                      oninput="setCustomValidity('')"
+                      placeholder="Enter a title"
+                    />
+                  </div>
+                  <div class="div-description">
+                    <p class="add-task-p">Description</p>
+                    <textarea
+                      required
+                      id="input-description"
+                      class="add-task-placeholder textarea-add"
+                      oninvalid="this.setCustomValidity('This field is required')"
+                      oninput="setCustomValidity('')"
+                      placeholder="Enter a Description"
+                    ></textarea>
+                  </div>
+                  <div class="div-add-category" id="div-add-category">
+                    <p class="add-task-p">Category</p>
+                    <div id="drop-down-box1" class="drop-down-box bg-white">
+                      <div
+                        onclick="showCategorys()"
+                        class="input-div-new category-new-height"
+                      >
+                        <p id="select-category" style="margin: 0">
+                          Select task category
+                        </p>
+                        <img class="arrow-down" src="../img/arrow-down1.png" />
+                      </div>
+                      <div class="div-all-categorys" id="all-categorys"></div>
+                    </div>
+                    <div
+                      class="colors-new-category"
+                      id="colors-new-category"
+                    ></div>
+                    <p
+                      class="text-category-required"
+                      id="text-category-required"
+                    >
+                      Please choose a category
+                    </p>
+                    <p
+                      class="text-category-required"
+                      id="text-category-required-name"
+                      style="margin-top: 4px"
+                    >
+                      Please choose a category name and a color
+                    </p>
+                  </div>
+                  <div>
+                    <p class="add-task-p">Assigned to</p>
+                    <div id="drop-down-box" class="drop-down-box bg-white">
+                      <div
+                        onclick="showContacts()"
+                        class="input-div-new category-new-height"
+                      >
+                        <p style="margin: 0">Select contacts to assign</p>
+                        <img class="arrow-down" src="../img/arrow-down1.png" />
+                      </div>
+                      <div class="div-all-contacts" id="all-contacts"></div>
+                    </div>
+                    <p class="subtask-required" id="contact-required">
+                      Please choose at least one contact
+                    </p>
+                  </div>
+                </div>
+                <div class="right-container right-container-add">
+                  <div class="div-date" id="div-date">
+                    <p class="add-task-p">Due date</p>
+                    <input
+                      id="input-date-add-task"
+                      class="add-task-input-date"
+                      type="date"
+                      oninvalid="this.setCustomValidity('This field is required')"
+                      oninput="setCustomValidity('')"
+                      required
+                      min="${year}-${month}-${day}"
+                      max="2025-01-01"
+                      placeholder="dd/mm/yyyy"
+                    />
+                  </div>
+                  <div class="container-prio">
+                    <p class="add-task-p">Prio</p>
+                    <div class="add-task-prio-container">
+                      <div
+                        class="add-task-prio-div bg-white"
+                        id="prio-div1"
+                        onclick="setBorder('prio-div1', 'Urgent')"
+                      >
+                        <p>Urgent</p>
+                        <img id="prio-img1" src="../img/red-arrows-up.png" />
+                      </div>
+                      <div
+                        class="add-task-prio-div bg-white"
+                        id="prio-div2"
+                        onclick="setBorder('prio-div2', 'Medium')"
+                      >
+                        <p>Medium</p>
+                        <img id="prio-img2" src="../img/orange-lines3.png" />
+                      </div>
+                      <div
+                        class="add-task-prio-div bg-white"
+                        style="margin-right: 0 !important"
+                        id="prio-div3"
+                        onclick="setBorder('prio-div3', 'Low')"
+                      >
+                        <p>Low</p>
+                        <img
+                          id="prio-img3"
+                          src="../img/green-arrows-down.png"
+                        />
+                      </div>
+                    </div>
+                    <p class="text-prio-required" id="prio-required">
+                      Please choose the priority of the task
+                    </p>
+                  </div>
+                  <div class="div-width-sub" style="width: 90%">
+                    <p style="width: 100%" class="add-task-p">Subtasks</p>
+                    <div
+                      class="add-task-input div-subtask bg-white title-site-add-task subtask-div-resp"
+                      id="subtask-div"
+                    >
+                      <input
+                        class="input-subtask"
+                        type="text"
+                        placeholder="Add new subtask"
+                        onclick="changeSubtaskInput()"
+                      />
+                      <img
+                        onclick="changeSubtaskInput()"
+                        src="../img/plus.png"
+                      />
+                    </div>
+                    <p class="subtask-required" id="subtask-required">
+                      Der Subtask darf nicht leer sein
+                    </p>
+                    <div
+                      class="new-subtask-div new-height-div-sub"
+                      id="new-subtask-div"
+                    ></div>
+                  </div>
+                  <div class="container-buttons buttons-responsiv">
+                    <button
+                      onclick="cancelNewTask()"
+                      class="add-task-cancel-button new-height-button"
+                    >
+                      <p>Cancel</p>
+                      <p style="margin-left: 8px">X</p>
+                    </button>
+                    <button
+                      id="button-add-new-task"
+                      class="create-task-button new-height-button"
+                    >
+                      <p>Create Task</p>
+                      <img src="../img/hook.png" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
