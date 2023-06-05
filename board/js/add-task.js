@@ -112,7 +112,6 @@ function addTask(currentCategory) {
  * Close add task window and reset a few global variables
  */
 function closeAddTask() {
-
   document
     .getElementById("container-opened-task")
     .classList.remove("display-flex");
@@ -257,9 +256,13 @@ function checkIfChecked(id, c) {
     chosenContacts.push(names);
     chosenContact = true;
     checkForChosenContact();
+    document.querySelector(`#checkbox-container${c}`).classList.add("checked");
   } else {
     chosenContact = false;
     chosenContacts.splice(idToOpen, 1);
+    document
+      .querySelector(`#checkbox-container${c}`)
+      .classList.remove("checked");
   }
 }
 
@@ -269,7 +272,6 @@ function checkIfChecked(id, c) {
 function showCategorys() {
   document.getElementById("all-contacts").classList.remove("display-flex");
   let categorys = document.getElementById("all-categorys");
-  console.log(categorys);
   if (categorys.classList.contains("display-flex")) {
     categorys.classList.remove("display-flex");
     categorys.innerHTML = "";
@@ -394,4 +396,5 @@ function cancelNewTask() {
   resetGlobalVariabales();
   renderContacts();
   removeAllBorders();
+  closeAddTask();
 }

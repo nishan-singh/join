@@ -2,13 +2,11 @@ body {
   margin: 0;
   background-color: rgb(246, 247, 248);
   font-family: "Inter";
-}
-.header {
-  height: 90px;
+  overflow-x: hidden;
 }
 .rightContent h1 {
   font-size: 61px;
-  margin-bottom: 50px;
+  margin-block: 42px;
 }
 .rightContent h2 {
   font-size: 27px;
@@ -46,7 +44,6 @@ body {
     left: 232px;
     width: calc(100% - 232px);
     padding-inline: 5%;
-
   }
 }
 

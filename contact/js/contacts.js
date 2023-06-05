@@ -15,7 +15,6 @@ let alphabetics = [
   "L",
   "M",
   "N",
-  "M",
   "O",
   "P",
   "Q",

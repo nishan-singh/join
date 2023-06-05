@@ -25,7 +25,7 @@ async function set_new_password() {
       }
       await saveUser(user);
     }
-    window.location.href = "../login.html";
+    window.location.href = "../index.html";
   } else {
     showWarnPW();
     setTimeout(clearWarn, 1000);

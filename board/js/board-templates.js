@@ -165,7 +165,7 @@ function createEditableTask(idToOpen, id) {
                         <div id="drop-down-box" class="drop-down-box-edit-task">
                             <div onclick="showContacts()" class="input-div-new" style="height: 40px;">
                                 <p class="padding-left" style="margin: 0;">Select contacts to assign</p>
-                                <img class="arrow-down" src="../img/arrow-down1.png">
+                                <img class="arrow-down" src="../img/arrow-down.png">
                             </div>
                             <div class="div-all-contacts" id="all-contacts"></div>
                         </div>
@@ -198,13 +198,13 @@ function createContactsToEdit(con, c) {
 {
   /* <div onclick="showCategorys()" class="input-div-new">
 <p id="select-category" style="margin: 0;">Select task category</p>
-<img class="arrow-down" src="../img/arrow-down1.png">
+<img class="arrow-down" src="../img/arrow-down.png">
 </div> */
 }
 
 function createAddTaskWindow(year, month, day) {
   return /*html*/ `
-        <div class="add-task-window" id="add-task-window">
+        <div class="add-task-window" id="add-task-window" onclick="event.stopPropagation()">
         <button onclick="closeAddTask()" class="x-mark-add-task"><img  src="../img/x-mark2.png"></button>    
         <form class="form-add-task-window" onsubmit="addNewTask('Board'); return false;">
                 <h2 class="add-task-headline">Add Task</h2>\
@@ -226,7 +226,7 @@ function createAddTaskWindow(year, month, day) {
                     <div id="drop-down-box1" class="drop-down-box">
                         <div onclick="showCategorys()" class="input-div-new">
                             <p id="select-category" style="margin: 0;">Select task category</p>
-                            <img class="arrow-down" src="../img/arrow-down1.png">
+                            <img class="arrow-down" src="../img/arrow-down.png">
                         </div>
                         <div class="div-all-categorys" id="all-categorys">
 
@@ -245,7 +245,7 @@ function createAddTaskWindow(year, month, day) {
                         <div id="drop-down-box" class="drop-down-box">
                             <div onclick="showContacts()" class="input-div-new">
                                 <p class="p-contact-3" style="margin: 0;">Select contacts to assign</p>
-                                <img class="arrow-down" src="../img/arrow-down1.png">
+                                <img class="arrow-down" src="../img/arrow-down.png">
                             </div>
                             <div class="div-all-contacts" id="all-contacts"></div>
                         </div>
@@ -348,7 +348,7 @@ function newCheckBox(sub) {
 
 function createContacts(con, c) {
   return /*html*/ `
-        <div class="container-contacts">
+        <div class="container-contacts" id="checkbox-container${c}">
             <p style="margin: 0;">${con["first-name"]} ${con["last-name"]}</p>
             <input onclick="checkIfChecked('checkbox${c}', ${c})" id="checkbox${c}" class="contact-checkbox" type="checkbox" name="box">
         </div>
@@ -422,7 +422,7 @@ function showOldCategorys() {
   return /*html*/ `
         <div onclick="showCategorys()" class="input-div-new">
             <p id="select-category" style="margin: 0;">Select task category</p>
-            <img class="arrow-down" src="../img/arrow-down1.png">
+            <img class="arrow-down" src="../img/arrow-down.png">
         </div>
         <div class="div-all-categorys" id="all-categorys"></div>
     `;

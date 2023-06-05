@@ -63,7 +63,6 @@
     width: 75%;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
   }
   .contact-first-last-name-div {
     width: 75px;
@@ -78,7 +77,6 @@
     width: 75%;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
   }
   .new-contact-overlay {
     width: 40%;

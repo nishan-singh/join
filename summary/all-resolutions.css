@@ -50,7 +50,7 @@
 @media (min-width: 872px) {
   .log-out-menu {
     visibility: hidden;
-    right: 0;
+    right: 5%;
   }
   .show-log-out {
     visibility: visible;
@@ -72,7 +72,7 @@
     right: -300px;
   }
   .log-out-for-mobile {
-    right: 0px;
+    right: 10%;
   }
   .navbar {
     width: 100%;
@@ -158,6 +158,9 @@
 @media (max-width: 650px) {
   .navbar {
     padding-inline: 5%;
+  }
+  .log-out-for-mobile {
+    right: 5%;
   }
   .todo-summary-greeting-wrapper {
     width: 90%;

@@ -25,7 +25,7 @@ async function sign() {
   if (checkNewUser(users, email.value)) {
     saveNewUser(users, newUser);
     setTimeout(() => {
-      window.location.href = "../login.html";
+      window.location.href = "../index.html";
     }, 1000);
     cleanValue(username, email, password);
   } else {
@@ -38,7 +38,7 @@ function showWarning() {
 }
 
 function locateToLogin() {
-  window.location.href = "../login.html";
+  window.location.href = "../index.html";
 }
 
 function cleanValue(username, email, password) {

@@ -9,7 +9,7 @@
 body {
   font-family: Inter, sans-serif;
   background-color: #f6f7f8;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .d-none {
@@ -43,7 +43,6 @@ h2 {
 .main-section {
   font-weight: 400;
   font-size: 27px;
-  line-height: 120%;
 }
 
 .deco-line {

@@ -64,7 +64,8 @@ body {
   border: 1px solid;
 }
 
-.todo-summary-greeting-wrapper, .todo-section {
+.todo-summary-greeting-wrapper,
+.todo-section {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -217,15 +218,15 @@ body {
   gap: 10px;
 }
 
-.todo-status-wrapper a:hover{
+.todo-status-wrapper a:hover {
   background: var(--primary-color);
   color: var(--text-secondary-color);
 }
 
-.todo-section a:hover .circle{
+.todo-section a:hover .circle {
   fill: var(--secondary-color);
 }
-.todo-section a:hover .hover-bg{
+.todo-section a:hover .hover-bg {
   fill: var(--primary-color);
 }
 

@@ -26,7 +26,7 @@ async function sign() {
 
   if (checknewUser(users, newUser)) {
     savenewUser(users, newUser);
-    window.location.href = "./login.html";
+    window.location.href = "./index.html";
     cleanValue(username, email, password);
   } else {
     openPopup();
@@ -40,7 +40,7 @@ function openPopup() {
 }
 
 function locateToLogin() {
-  window.location.href = "./login.html";
+  window.location.href = "./index.html";
 }
 
 function cleanValue(username, email, password) {

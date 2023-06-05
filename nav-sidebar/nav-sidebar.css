@@ -45,7 +45,6 @@ li {
   justify-content: space-between;
   z-index: 5;
   padding-inline: 5%;
-  overflow: hidden;
 }
 
 .info {
@@ -81,7 +80,7 @@ li {
 }
 
 .log-out-menu {
-  position: absolute;
+  position: fixed;
   top: 72px;
   margin: 0;
   padding: 0;
@@ -189,10 +188,11 @@ li {
 @media (min-width: 872px) {
   .log-out-menu {
     visibility: hidden;
-    right: 0;
+    right: -5%;
   }
   .show-log-out {
     visibility: visible;
+    right: 5%;
   }
   .log-out-menu li {
     display: none;
@@ -211,7 +211,7 @@ li {
     right: -300px;
   }
   .log-out-for-mobile {
-    right: 0px;
+    right: 10%;
   }
   .navbar {
     width: 100%;
@@ -271,5 +271,8 @@ li {
 @media (max-width: 650px) {
   .navbar {
     padding-inline: 5%;
+  }
+  .log-out-for-mobile {
+    right: 5%;
   }
 }

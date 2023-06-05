@@ -210,8 +210,9 @@ button {
   line-height: 120%;
 }
 
-.add-contact-overlay::before, .edit-contact-name::before {
-  content: url(../img/logo-svg.svg);
+.add-contact-overlay::before,
+.edit-contact-name::before {
+  content: url("../img/logo.png");
   display: flex;
   margin-bottom: 24px;
 }
@@ -225,7 +226,8 @@ button {
   position: relative;
 }
 
-.new-contact-overlay-text::after, .edit-contact-name::after {
+.new-contact-overlay-text::after,
+.edit-contact-name::after {
   content: "";
   background: #29abe2;
   position: absolute;
